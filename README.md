@@ -7,7 +7,7 @@ This folder has all information regarding the inrix data set and it's parsing.
 
 1. Have python3 installed 
 2. Install virtualenv globally through pip `pip install virtualenv`
-3. Clone this repo with `git clone `
+3. Clone this repo with `git clone https://github.com/sperrys/bostoncongestion.git`
 4. Create the virtual environment with `virtualenv -p python3 env`
 5. Activate the environment with `source env/bin/activate`
 6. Install dependencies with `pip install -r requirements.txt`
