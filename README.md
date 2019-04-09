@@ -13,6 +13,38 @@ This folder has all information regarding the inrix data set and it's parsing.
 6. Install dependencies with `pip install -r requirements.txt`
 
 
+### Format 
+
+#### Columns 
+* **tmc_code**	
+    - TMC in 9 digit format	
+    - Traffic Message Channel – this identifies the road segment in question
+* **measurement_tstamp**	
+    - Date and time in local time (format yy-mm-dd hh:mm:ss.nnn)
+    - DOW = ‘Day of Week’
+    - CTPS has expanded the ‘measurement_tstamp field in the delivered data into month, day, hour,
+and minute fields to simplify querying.
+    - The ‘DOW’ field is encoded as an INTEGER: 0 == Monday, 1 == Tuesday, ... etc. ... 5 == Saturday, 6 == Sunday.
+     
+* **speed**			
+    - Speed in mph	
+* **average_speed**	
+    - Historical average speed for the TMC and time period
+* **reference_speed**	
+    - Calculated "free flow" speed for the TMC
+* **travel_time_minutes**	
+    - Current estimate of time to traverse the TMC in minutes
+* **confidence_score**	
+    - Gives an indication of the source of individual speed values: 
+		- 30 indicates real time component, 
+		- 20 does not have real time component (historical or prediction values only), 
+		- 10 indicates reference speed is used
+* **cvalue**			
+    - The probability that the speed represents the actual roadway conditions based on trends.  
+	- Only present when confidence_score = 30,
+	- 0 = low probability 
+	- 100 = high probability.
+
 
 #### main.py 
 
